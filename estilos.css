@@ -1,1 +1,8 @@
-
+div#barra-registro{
+  font-size: 12;
+  
+}
+.custom-element {
+  color: gray-100;
+  background-color: dark;
+}

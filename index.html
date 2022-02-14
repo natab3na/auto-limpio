@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
   <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="custom.scss">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/> 
 </head>
 <body>
@@ -19,42 +20,45 @@
   </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-12 bg-primary ">Registro Clientes</div>
-      
-        <form>
-          <form class="row g-3 needs-validation" novalidate>
-            
+    
+    <form class="row" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      <div id="barra-registro" class="col-12 bg-primary ">Registro Clientes</div>
+          
             <div class="col-md-3">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre="/>
+              <label for="nombre" class="form-label"></label>
+              <input type="text" class="form-control" id="nombre=" maxlength="30" 
+              name="nombre" pattern="[a-zA-Z]{1-30}" placeholder="Nombre" required/>
             </div>
-
+          
             <div class="col-md-3">
-              <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellido" />
+              <label for="apellido" class="form-label"></label>
+              <input type="text" class="form-control" id="apellido" name="" maxlength="30" 
+              pattern="[a-zA-Z]*" placeholder="Apellido" required/>
             </div>
-            
+          
             <div class="col-md-3">
-              <label for="rut" class="form-label">Rut</label>
-              <input type="text" class="form-control" id="rut" />
+              <label for="rut" class="form-label"></label>
+              <input type="number" class="form-control" id="rut" maxlength="8" 
+              pattern="^[0-9_.-]*$" placeholder="Rut" required/>
             </div>
-
-            <div class="col-s-3">
-              <label for="dv" class="form-label">Dv</label>
-              <input type="text" class="form-control" id="dv" />
-            </div>
-           
+          
+            <div class="col-sm-3">
+              <label for="dv" class="form-label"></label>
+              <input type="text" class="form-control" id="dv" maxlength="1" 
+              pattern="[k-K]" placeholder="DV" required />
+            </div> 
+          
             <div class="col-md-6">
-              <label for="direccion" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="direccion" />
+              <label for="direccion" class="form-label"></label>
+              <input type="text" class="form-control" id="direccion" maxlength="80"
+              pattern="[a-zA-Z]" placeholder="Direccion" required />
               <div class="invalid-feedback"></div>
             </div>
 
             <div class="col-md-3">
-              <label for="comuna" class="form-label">Comuna</label>
-              <select class="form-select" id="comuna" required>
-                <option selected disabled value="">Selecciona...</option>
+              <label for="comuna" class="form-label"></label>
+                <select class="form-select" id="comuna" required>
+                <option selected disabled value="">Comuna</option>
                 <option>Concepción</option>
                 <option>Temuco</option>
                 <option>Villarrica</option>
@@ -63,17 +67,14 @@
               </select>
               <div class="invalid-feedback"></div>
             </div>
-          </form>
-        </form>
-
-
-      <div class="col-12 bg-primary">Registro Vehiculo</div>
-      <form>
-        <form class="row g-3 needs-validation" novalidate>
-          <div class="col-md-4">
-            <label for="vehiculo" class="form-label">Tipo de Vehiculo</label>
+          
+      
+        <div class="col-12 bg-primary">Registro Vehiculo</div>
+     
+          <div class="col-md-6">
+            <label for="vehiculo" class="form-label"></label>
             <select class="form-select"  id="vehiculo" >
-              <option selected disabled value="">Selecciona...</option>
+              <option selected disabled value="">Selecciona tipo de vehiculo...</option>
                 <option>Automóvil</option>
                 <option>Camioneta</option>
                 <option>Camión</option>
@@ -83,73 +84,67 @@
             <div class="valid-feedback"></div>
           </div>
 
-          <div class="col-md-4">
-            <label for="marca" class="form-label">Marca</label>
-            <input type="text" class="form-control" id="marca" />
-            <div class="valid-feedback"></div>
-          </div>
-
-          <div class="col-md-4">
-            <label for="modelo" class="form-label">Modelo</label>
-            <input type="text" class="form-control" id="marca" />
-            <div class="valid-feedback"></div>
-          </div>
-
-
           <div class="col-md-6">
-            <label for="ano" class="form-label">Año</label>
-            <input type="text" class="form-control" id="ano" >
+            <label for="marca" class="form-label"></label>
+            <input type="text" class="form-control" id="marca" maxlength="20"
+            pattern="[a-zA-Z]" placeholder="Ingresa Marca Vehiculo" required />
+            <div class="valid-feedback"></div>
           </div>
 
-          <div class="col-md-3">
-            <label for="revision" class="form-label">Revisión Técnica</label>
-            <select class="form-select" id="validationCustom04" required>
-              <option selected disabled value="">Selecciona...</option>
-              <option>Si</option>
-              <option>No</option>
-            </select>
+          <div class="col-md-5">
+            <label for="modelo" class="form-label"></label>
+            <input type="text" class="form-control" id="modelo"  maxlength="20"
+            pattern="[a-zA-Z]" placeholder="Ingresa Modelo Vehiculo" required />
+            
+          </div>
+
+          <div class="col-md-5">
+            <label for="ano" class="form-label"></label>
+            <input type="number" class="form-control" id="ano" maxlength="4"
+            pattern="[0-9]" placeholder="Ingresa año" required  >
+
+          </div>
+
+          <div class="col-md-2">
+            <label for="revision" class="form-label"></label>
+              <select class="form-select" id="revision" required>
+                <option selected disabled value="">Revisión Tecnica...</option>
+                <option>Si</option>
+                <option>No</option>
+              </select>
             <div class="invalid-feedback"></div>
           </div> 
-        </form>
-      </form>
-
-
-      <div class="col-12 bg-primary">Servicios</div>
-      <form>
-        <form class="row g-3 needs-validation" novalidate>
-
-          <div class="col-md-3">
-            <label for="validationCustom04" class="form-label">Servicio</label>
-            <select class="form-select" id="validationCustom04" required>
-              <option selected disabled value="">Selecciona...</option>
+        
+      
+        <div class="col-12 bg-primary">Servicios</div>
+      
+          <div class="col-md-12">
+            <label for="servicio" class="form-label"></label>
+            <select class="form-select" id="servicio" >
+              <option selected disabled value="">Selecciona tipo de servicio...</option>
               <option>Lavado exterior $7.000</option>
               <option>Lavado de Motor $5.000</option>
             </select>
             
           </div> 
-        </form>
-      </form>
+         
 
-      <div class="col-12 bg-primary">Encargado</div>
+        <div class="col-12 bg-primary">Encargado</div>
       
-      <form class="row g-3 needs-validation" novalidate>
-        
-        <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">Encargado</label>
-          <select class="form-select" id="validationCustom04" required>
+        <div class="col-md-12">
+          <label for="encargado" class="form-label"></label>
+          <select class="form-select" id="encargado" required>
             <option selected disabled value="">Selecciona...</option>
             <option>Roberto Jara</option>
             <option>Gabriel Saez</option>
             <option>Juan Jara</option>
           </select>
-          <div class="invalid-feedback">
-           
-          </div>
         </div> 
-        <div class="col-12">
+      
+        <div class="col-12 ali">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
-      </form>   
+    </form>  
 
   </div>
     
@@ -158,5 +153,6 @@
 <script src="node_modules/jquery/dist/jquery.slim.js"></script>
 <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="node_modules/bootstrap/scss/bootstrap.scss"></script>
 </body>
 </html>
