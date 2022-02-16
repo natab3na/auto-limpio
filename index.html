@@ -6,23 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
   <link rel="stylesheet" href="estilos.css">
-  <link rel="stylesheet" href="custom.scss">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/> 
 </head>
 <body>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="imagenes/logo-autolimpio.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-        AUTOLIMPIO
+      <a class="mx-auto">
+        <img id="logo"src="imagenes/logo-autolimpio.svg" alt="logo-autolimpio"  class="d-inline-block align-center">   
+        <h1> Registro de orden de servicio</h1>
       </a>
     </div>
+    
   </nav>
 
   <div class="container">
     
     <form class="row" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-      <div id="barra-registro" class="col-12 bg-primary ">Registro Clientes</div>
+      <div id="barra-registro" class="col-12 bg-primary text-white fs-3 ">Registro Clientes</div>
           
             <div class="col-md-3">
               <label for="nombre" class="form-label"></label>
@@ -69,7 +69,7 @@
             </div>
           
       
-        <div class="col-12 bg-primary">Registro Vehiculo</div>
+        <div id="barra-registro" class="col-12 bg-primary text-white fs-3">Registro Vehiculo</div>
      
           <div class="col-md-6">
             <label for="vehiculo" class="form-label"></label>
@@ -94,15 +94,13 @@
           <div class="col-md-5">
             <label for="modelo" class="form-label"></label>
             <input type="text" class="form-control" id="modelo"  maxlength="20"
-            pattern="[a-zA-Z]" placeholder="Ingresa Modelo Vehiculo" required />
-            
+            pattern="[a-zA-Z]" placeholder="Ingresa Modelo Vehiculo" required /> 
           </div>
 
           <div class="col-md-5">
             <label for="ano" class="form-label"></label>
             <input type="number" class="form-control" id="ano" maxlength="4"
             pattern="[0-9]" placeholder="Ingresa año" required  >
-
           </div>
 
           <div class="col-md-2">
@@ -116,20 +114,24 @@
           </div> 
         
       
-        <div class="col-12 bg-primary">Servicios</div>
+        <div  id="barra-registro" class="col-12 bg-primary text-white fs-3">Servicios</div>
       
           <div class="col-md-12">
-            <label for="servicio" class="form-label"></label>
-            <select class="form-select" id="servicio" >
-              <option selected disabled value="">Selecciona tipo de servicio...</option>
-              <option>Lavado exterior $7.000</option>
-              <option>Lavado de Motor $5.000</option>
-            </select>
-            
-          </div> 
-         
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="7000"name="lavadoExterior" id="lavadoExterior">
+              <label class="form-check-label" for="lavadoExterior" >
+                Lavado Exterior $7.000
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" value="5000" name="lavadoMotor" id="lavadoMotor" >
+              <label class="form-check-label" for="lavadoMotor" >
+                Lavado Motor $5.000
+              </label>
+            </div>
+          </div>
 
-        <div class="col-12 bg-primary">Encargado</div>
+        <div id="barra-registro" class="col-12 bg-primary text-white fs-3">Encargado</div>
       
         <div class="col-md-12">
           <label for="encargado" class="form-label"></label>
@@ -141,18 +143,28 @@
           </select>
         </div> 
       
-        <div class="col-12 ali">
-          <button class="btn btn-primary" type="submit">Submit form</button>
+        <div id="submit-boton" class="col-12 ali">
+          <button class="btn btn-primary" type="submit">Enviar</button>
         </div>
-    </form>  
+    </form> 
+    
+  <div id="totalFinal" class="row bg-light">
+    <div class="col-1" >Neto</div>
+    <div id="neto" class="col-1" >$</div>
+    <div class="col-1" >IVA</div>
+    <div id="iva"class="col-1" >$</div>
+    <div class="col-1" >Total</div>
+    <div id="total"class="col-1" >$</div>
+  </div>  
 
   </div>
     
 
 
-<script src="node_modules/jquery/dist/jquery.slim.js"></script>
-<script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+
+
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="node_modules/bootstrap/scss/bootstrap.scss"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="auto-limpio.js"></script>
 </body>
 </html>

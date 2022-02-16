@@ -6,3 +6,24 @@ div#barra-registro{
   color: gray-100;
   background-color: dark;
 }
+
+div#barra-registro{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div#submit-boton{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div#totalFinal{
+  margin-top: 20px;
+}
+img#logo{
+  width: 300px;
+}
+h1{
+  text-align: center;
+}
