@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap 4 Website Example</title>
+  <title>Auto-limpio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -13,20 +13,21 @@
     <div class="container-fluid">
       <a class="mx-auto">
         <img id="logo"src="imagenes/logo-autolimpio.svg" alt="logo-autolimpio"  class="d-inline-block align-center">   
-        <h1> Registro de orden de servicio</h1>
       </a>
     </div>
     
   </nav>
 
   <div class="container">
+
+    <h1>Orden de Trabajo   </h1>
     
-    <form class="row" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-      <div id="barra-registro" class="col-12 bg-primary text-white fs-3 ">Registro Clientes</div>
+    <form  action="" method="post" class="row" id="formulario">
+      <div id="barra-registro" class="col-12  text-white fs-3"  style="background-color: #26416A " >Registro Clientes</div>
           
             <div class="col-md-3">
               <label for="nombre" class="form-label"></label>
-              <input type="text" class="form-control" id="nombre=" maxlength="30" 
+              <input type="text" class="form-control" id="nombre" maxlength="30" 
               name="nombre" pattern="[a-zA-Z]{1-30}" placeholder="Nombre" required/>
             </div>
           
@@ -51,8 +52,7 @@
             <div class="col-md-6">
               <label for="direccion" class="form-label"></label>
               <input type="text" class="form-control" id="direccion" maxlength="80"
-              pattern="[a-zA-Z]" placeholder="Direccion" required />
-              <div class="invalid-feedback"></div>
+              pattern="[a-zA-Z0-9]" placeholder="Direccion" />
             </div>
 
             <div class="col-md-3">
@@ -69,7 +69,7 @@
             </div>
           
       
-        <div id="barra-registro" class="col-12 bg-primary text-white fs-3">Registro Vehiculo</div>
+        <div id="barra-registro"  style="background-color: #26416A" class="col-12  text-white fs-3" >Registro Vehiculo</div>
      
           <div class="col-md-6">
             <label for="vehiculo" class="form-label"></label>
@@ -105,7 +105,7 @@
 
           <div class="col-md-2">
             <label for="revision" class="form-label"></label>
-              <select class="form-select" id="revision" required>
+              <select  class="form-select" id="revision" required>
                 <option selected disabled value="">Revisión Tecnica...</option>
                 <option>Si</option>
                 <option>No</option>
@@ -114,7 +114,7 @@
           </div> 
         
       
-        <div  id="barra-registro" class="col-12 bg-primary text-white fs-3">Servicios</div>
+        <div  id="barra-registro" style="background-color: #26416A" class="col-12  text-white fs-3">Servicios</div>
       
           <div class="col-md-12">
             <div class="form-check">
@@ -131,7 +131,7 @@
             </div>
           </div>
 
-        <div id="barra-registro" class="col-12 bg-primary text-white fs-3">Encargado</div>
+        <div id="barra-registro" style="background-color: #26416A" class="col-12  text-white fs-3">Encargado</div>
       
         <div class="col-md-12">
           <label for="encargado" class="form-label"></label>
@@ -144,18 +144,46 @@
         </div> 
       
         <div id="submit-boton" class="col-12 ali">
-          <button class="btn btn-primary" type="submit">Enviar</button>
+          <button style="background-color: #26416A" class="btn text-white" type="submit">Enviar</button>
         </div>
     </form> 
-    
-  <div id="totalFinal" class="row bg-light">
-    <div class="col-1" >Neto</div>
-    <div id="neto" class="col-1" >$</div>
-    <div class="col-1" >IVA</div>
-    <div id="iva"class="col-1" >$</div>
-    <div class="col-1" >Total</div>
-    <div id="total"class="col-1" >$</div>
-  </div>  
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Total</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Cliente</th>
+          <td id="nombreCliente"></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Hora de entrega</th>
+          <td id="entrega"></td>
+        </tr>
+       
+        <tr>
+          <th scope="row">Total Neto</th>
+          <td id="neto">$</td>  
+        </tr>
+
+        <tr>
+          <th scope="row">IVA</th>
+          <td id="iva">$</td>  
+        </tr>
+
+        <tr>
+          <th scope="row">Total</th>
+          <td id="total">$</td>  
+        </tr>
+
+      </tbody>
+    </table>  
 
   </div>
     
